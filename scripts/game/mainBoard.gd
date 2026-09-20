@@ -15,3 +15,9 @@ func _ready():
 func update_from_state(state: GameState):
 	for i in range(SIZE*SIZE):
 		boards[i].update_from_state(state.boards[i])
+
+func update_cell(board_index, cell_index, player):
+	boards[board_index].update_cell(
+		cell_index,
+		player
+	)

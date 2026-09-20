@@ -22,3 +22,6 @@ func update_from_state(board_state: Array):
 
 func set_active(active: bool):
 	modulate = Color.white if active else Color(0.5, 0.5, 0.5)
+
+func update_cell(cell_index, player):
+	cells[cell_index].set_player(player)
