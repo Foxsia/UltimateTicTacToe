@@ -3,7 +3,7 @@ extends Control
 onready var game_manager = $GameManager
 onready var input_manager = $InputManager
 onready var cursor_manager = $CursorManager
-onready var main_board = $CenterMainBoard/MainBoard
+onready var main_board = $CenterMainBoard/mainBoard/GridContainer
 
 func _ready():
 	game_manager.connect("move_played", self, "_on_move_played")

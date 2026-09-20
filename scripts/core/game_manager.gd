@@ -97,4 +97,3 @@ func check_global_winner() -> bool:
 		return true
 	
 	return false
-
