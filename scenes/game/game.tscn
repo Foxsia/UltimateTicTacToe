@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/game/game.gd" type="Script" id=1]
 [ext_resource path="res://scripts/core/game_manager.gd" type="Script" id=2]
-[ext_resource path="res://assets/textures/big_grid.png" type="Texture" id=3]
 [ext_resource path="res://assets/textures/background.png" type="Texture" id=4]
 [ext_resource path="res://scripts/core/input_manager.gd" type="Script" id=5]
 [ext_resource path="res://scripts/core/cursor_manager.gd" type="Script" id=6]
@@ -16,27 +15,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 4 )
 
-[node name="CenterMainBoard" type="CenterContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 71.0
-margin_top = 13.0
-margin_right = 210.0
-margin_bottom = 143.0
-
-[node name="MainBoardBackground" type="TextureRect" parent="CenterMainBoard"]
-margin_right = 139.0
-margin_bottom = 130.0
-texture = ExtResource( 3 )
-
-[node name="mainBoard" parent="CenterMainBoard" instance=ExtResource( 7 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 69.0
-margin_top = 65.0
-margin_right = 69.0
-margin_bottom = 65.0
-
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource( 2 )
 
@@ -45,3 +23,11 @@ script = ExtResource( 5 )
 
 [node name="CursorManager" type="Node" parent="."]
 script = ExtResource( 6 )
+
+[node name="mainBoard" parent="." instance=ExtResource( 7 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 71.0
+margin_top = 13.0
+margin_right = 71.0
+margin_bottom = 13.0
