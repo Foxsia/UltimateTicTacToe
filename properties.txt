@@ -1,0 +1,5 @@
+cell_width = 11px
+cell_height = 10px
+gap between cells in one board = 1px
+gap to next cell in the next board = 11px
+to the side = 6px
