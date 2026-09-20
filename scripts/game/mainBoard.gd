@@ -11,7 +11,7 @@ func _ready():
 	columns = SIZE
 	
 	for i in range (SIZE*SIZE):
-		var board = preload("res://scenes/smallBoard.tscn").instance()
+		var board = preload("res://scenes/game/smallBoard.tscn").instance()
 		add_child(board)
 		boards.append(board)
 		

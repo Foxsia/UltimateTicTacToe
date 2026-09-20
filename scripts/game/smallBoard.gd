@@ -13,7 +13,7 @@ func _ready():
 	
 	
 	for i in range (SIZE*SIZE):
-		var cell = preload("res://scenes/cell.tscn").instance()
+		var cell = preload("res://scenes/cell/cell.tscn").instance()
 		add_child(cell)
 		cells.append(cell)
 		

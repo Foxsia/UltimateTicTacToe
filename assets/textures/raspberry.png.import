@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/raspberry.png-ba57b261af84ccbbec73501fc062761f.stex"
+path="res://.import/raspberry.png-1f9144e4ab9d4d61d0ae50aadfe80097.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/raspberry.png"
-dest_files=[ "res://.import/raspberry.png-ba57b261af84ccbbec73501fc062761f.stex" ]
+source_file="res://assets/textures/raspberry.png"
+dest_files=[ "res://.import/raspberry.png-1f9144e4ab9d4d61d0ae50aadfe80097.stex" ]
 
 [params]
 

@@ -1,7 +1,7 @@
 extends Control
 #loading images
-var rasp_texture = preload("res://assets/raspberry.png")
-var blue_texture = preload("res://assets/blueberry.png")
+var rasp_texture = preload("res://assets/textures/raspberry.png")
+var blue_texture = preload("res://assets/textures/blueberry.png")
 
 var cursor_x = 0
 var cursor_y = 0
@@ -45,15 +45,15 @@ func init_game():
 
 
 func _input(event):
-	if event.is_action_pressed("ui_up"):
+	if event.is_action_pressed("move_up"):
 		cursor_y = max(0, cursor_y - 1)
-	if event.is_action_pressed("ui_down"):
+	if event.is_action_pressed("move_down"):
 		cursor_y = min(GRID_SIZE-1, cursor_y+1)
-	if event.is_action_pressed("ui_left"):
+	if event.is_action_pressed("move_left"):
 		cursor_x = max(0, cursor_x - 1)
-	if event.is_action_pressed("ui_right"):
+	if event.is_action_pressed("move_right"):
 		cursor_x = min(GRID_SIZE-1, cursor_x+1)
-	if event.is_action_pressed("ui_accept"):
+	if event.is_action_pressed("confirm"):
 		play_cell()
 	update_cursor()
 

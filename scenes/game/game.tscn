@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/game/game.gd" type="Script" id=1]
+[ext_resource path="res://assets/textures/big_grid.png" type="Texture" id=3]
+[ext_resource path="res://assets/textures/background.png" type="Texture" id=4]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends GridContainer
+
+var SIZE = 3
+var boards = []
+
+signal move_played(board_index, cell_index)
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	columns = SIZE
+	
+	for i in range (SIZE*SIZE):
+		var board = preload(\"res://scenes/game/smallBoard.tscn\").instance()
+		add_child(board)
+		boards.append(board)
+		
+		board.connect(\"board_played\", self, \"_on_board_played\", [i])
+		
+func _on_board_played(cell, board_index):
+	var cell_index = cell.get_index()
+	emit_signal(\"move_played\", board_index, cell_index)
+
+
+func get_cell(x, y):
+	var board_x = int(x / 3)
+	var board_y = int(y / 3)
+	var board_index = board_y * 3 + board_x
+	var board = boards[board_index]
+	
+	var cell_x = x % 3
+	var cell_y = y % 3
+	var cell_index = cell_y * 3 + cell_x
+	
+	return board.cells[cell_index]
+"
+
+[node name="UltimateBoard" type="Control"]
+script = ExtResource( 1 )
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+
+[node name="centerMainBoard" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 71.0
+margin_top = 13.0
+margin_right = 210.0
+margin_bottom = 143.0
+
+[node name="MainBoardBackground" type="TextureRect" parent="centerMainBoard"]
+margin_right = 139.0
+margin_bottom = 130.0
+texture = ExtResource( 3 )
+
+[node name="MainBoard" type="GridContainer" parent="centerMainBoard"]
+margin_left = 69.0
+margin_top = 65.0
+margin_right = 69.0
+margin_bottom = 65.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_constants/vseparation = 3
+custom_constants/hseparation = 3
+columns = 9
+script = SubResource( 1 )
