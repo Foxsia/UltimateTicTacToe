@@ -7,7 +7,6 @@ var cells: Array = []
 signal board_played(cell)
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	columns = SIZE
 	
@@ -15,6 +14,8 @@ func _ready():
 		var cell = preload("res://scenes/cell/cell.tscn").instance()
 		add_child(cell)
 		cells.append(cell)
+	
+	set_cursor(0)
 
 func update_from_state(board_state: Array):
 	for i in range(SIZE*SIZE):
@@ -29,3 +30,11 @@ func update_cell(cell_index, player):
 func set_cursor(cell_index: int):
 	for i in range(cells.size()):
 		cells[i].set_highlight(i == cell_index)
+
+func set_winner(player: int):
+	match player:
+		GameState.Player.RASPBERRY:
+			modulate = Color(1.0, 0.3, 0.5)
+
+		GameState.Player.BLUEBERRY:
+			modulate = Color(0.3, 0.5, 1.0)

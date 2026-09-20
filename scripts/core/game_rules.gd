@@ -44,4 +44,6 @@ static func can_play(
 		if board_index != state.forced_board:
 			return false
 	
+	if state.boards[board_index][cell_index] != GameState.Player.NONE:
+		return false
 	return true

@@ -9,6 +9,11 @@ func _ready():
 	cursor_manager.game_manager = game_manager
 	game_manager.connect("move_played", self, "_on_move_played")
 	game_manager.connect("state_changed", self, "_on_state_changed")
+	game_manager.connect(
+		"board_finished",
+		main_board,
+		"finish_board"
+	)
 	
 	input_manager.connect("confirm", self, "_on_confirm")
 	

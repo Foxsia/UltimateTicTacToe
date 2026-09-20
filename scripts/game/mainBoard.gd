@@ -30,3 +30,7 @@ func set_cursor(board_index: int, cell_index: int):
 			boards[i].set_cursor(cell_index)
 		else:
 			boards[i].set_cursor(-1)
+
+func finish_board(board_index: int, winner: int):
+	print("FINISHED BOARD: ", board_index, " WINNER: ", winner)
+	boards[board_index].set_winner(winner)
