@@ -32,8 +32,10 @@ texture = ExtResource( 3 )
 [node name="mainBoard" parent="CenterMainBoard" instance=ExtResource( 7 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 140.0
-margin_bottom = 130.0
+margin_left = 69.0
+margin_top = 65.0
+margin_right = 69.0
+margin_bottom = 65.0
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource( 2 )

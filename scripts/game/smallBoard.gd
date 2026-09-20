@@ -25,3 +25,7 @@ func set_active(active: bool):
 
 func update_cell(cell_index, player):
 	cells[cell_index].set_player(player)
+
+func set_cursor(cell_index: int):
+	for i in range(cells.size()):
+		cells[i].set_highlight(i == cell_index)

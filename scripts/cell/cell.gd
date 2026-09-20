@@ -2,6 +2,7 @@ class_name CellView
 extends Control
 
 onready var texture_rect = $TextureRect
+onready var color_rect = $ColorRect
 
 func set_player(player: int):
 	match player:
@@ -20,6 +21,6 @@ func set_player(player: int):
 
 func set_highlight(active: bool):
 	if active:
-		modulate = Color(1.0, 1.0, 0.5)
+		color_rect.color = Color(1.0, 1.0, 0.0, 0.5)
 	else:
-		modulate = Color.white
+		color_rect.color = Color(1.0, 1.0, 1.0, 0.0)

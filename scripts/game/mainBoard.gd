@@ -11,6 +11,8 @@ func _ready():
 		var board = preload("res://scenes/game/smallBoard.tscn").instance()
 		add_child(board)
 		boards.append(board)
+	
+	set_cursor(0, 0)
 
 func update_from_state(state: GameState):
 	for i in range(SIZE*SIZE):
@@ -21,3 +23,10 @@ func update_cell(board_index, cell_index, player):
 		cell_index,
 		player
 	)
+
+func set_cursor(board_index: int, cell_index: int):
+	for i in range(boards.size()):
+		if i == board_index:
+			boards[i].set_cursor(cell_index)
+		else:
+			boards[i].set_cursor(-1)
