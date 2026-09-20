@@ -28,12 +28,18 @@ _global_script_classes=[ {
 "class": "GameState",
 "language": "GDScript",
 "path": "res://scripts/core/game_state.gd"
+}, {
+"base": "GridContainer",
+"class": "SmallBoardView",
+"language": "GDScript",
+"path": "res://scripts/game/smallBoard.gd"
 } ]
 _global_script_class_icons={
 "CellView": "",
 "GameManager": "",
 "GameRules": "",
-"GameState": ""
+"GameState": "",
+"SmallBoardView": ""
 }
 
 [application]

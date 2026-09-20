@@ -1,8 +1,8 @@
+class_name SmallBoardView
 extends GridContainer
 
-const SIZE = 3
-var cells = []
-var winner = null
+const SIZE := 3
+var cells: Array = []
 
 signal board_played(cell)
 
@@ -11,30 +11,14 @@ signal board_played(cell)
 func _ready():
 	columns = SIZE
 	
-	
 	for i in range (SIZE*SIZE):
 		var cell = preload("res://scenes/cell/cell.tscn").instance()
 		add_child(cell)
 		cells.append(cell)
-		
-		cell.connect("played", self, "_on_cell_played")
 
-func _on_cell_played(cell):
-	emit_signal("board_played", cell)
-	check_winner()
+func update_from_state(board_state: Array):
+	for i in range(SIZE*SIZE):
+		cells[i].set_player(board_state[i])
 
-func check_winner():
-	var combos = [
-		[0,1,2], [3,4,5],[6,7,8],
-		[0,3,6],[1,4,7], [2,5,8],
-		[0,4,8],[2,4,6]
-	]
-	
-	for com in combos:
-		var firstCell = cells[com[0]].cell_owner
-		var secondCell = cells[com[1]].cell_owner
-		var thirdCell = cells[com[2]].cell_owner
-		
-		if(firstCell != null and secondCell == firstCell and secondCell == thirdCell):
-			winner = firstCell
-			print(winner)
+func set_active(active: bool):
+	modulate = Color.white if active else Color(0.5, 0.5, 0.5)
