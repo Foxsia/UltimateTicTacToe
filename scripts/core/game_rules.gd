@@ -40,6 +40,9 @@ static func can_play(
 	if cell_index < 0 or cell_index >= 9:
 		return false
 	
+	if state.board_status[board_index] != GameState.BoardStatus.PLAYING:
+		return false
+	
 	if state.forced_board != -1:
 		if board_index != state.forced_board:
 			return false
