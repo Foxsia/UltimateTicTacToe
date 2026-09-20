@@ -1,21 +1,25 @@
+class_name CellView
 extends Control
 
 onready var texture_rect = $TextureRect
 
-var cell_owner = null
+func set_player(player: int):
+	match player:
+		GameState.Player.RASPBERRY:
+			texture_rect.texture = preload(
+				"res://assets/textures/raspberry.png"
+			)
 
-signal played(cell)
+		GameState.Player.BLUEBERRY:
+			texture_rect.texture = preload(
+				"res://assets/textures/blueberry.png"
+			)
 
-func play(player, texture):
-	if cell_owner != null:
-		return
-	cell_owner = player
-	texture_rect.texture = texture
-	emit_signal("played", self) 
+		GameState.Player.NONE:
+			texture_rect.texture = null
 
-func highlight(active):
+func set_highlight(active: bool):
 	if active:
-		modulate = Color(1,1,0)
+		modulate = Color(1.0, 1.0, 0.5)
 	else:
-		modulate = Color(1,1,1)
-
+		modulate = Color.white
