@@ -12,7 +12,6 @@ var forced_board = -1
 
 onready var main_board = $centerMainBoard/MainBoard
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	main_board.connect("move_played", self, "_on_move")
 	init_game()
