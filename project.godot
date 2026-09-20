@@ -15,6 +15,11 @@ _global_script_classes=[ {
 "path": "res://scripts/cell/cell.gd"
 }, {
 "base": "Node",
+"class": "CursorManager",
+"language": "GDScript",
+"path": "res://scripts/core/cursor_manager.gd"
+}, {
+"base": "Node",
 "class": "GameManager",
 "language": "GDScript",
 "path": "res://scripts/core/game_manager.gd"
@@ -46,6 +51,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "CellView": "",
+"CursorManager": "",
 "GameManager": "",
 "GameRules": "",
 "GameState": "",
