@@ -6,6 +6,7 @@ onready var cursor_manager = $CursorManager
 onready var main_board = $mainBoard/GridContainer
 
 func _ready():
+	cursor_manager.game_manager = game_manager
 	game_manager.connect("move_played", self, "_on_move_played")
 	game_manager.connect("state_changed", self, "_on_state_changed")
 	
@@ -32,6 +33,8 @@ func _on_confirm():
 		board_index,
 		cell_index
 	)
+	
+	cursor_manager.update_board()
 
 func _on_state_changed():
 	main_board.update_from_state(game_manager.state)

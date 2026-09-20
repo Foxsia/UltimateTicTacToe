@@ -23,3 +23,10 @@ func move(direction: Vector2):
 
 	cell_index = y * 3 + x
 	emit_signal("cursor_changed", board_index, cell_index)
+
+func update_board():
+	if game_manager.state.forced_board != -1:
+		board_index = game_manager.state.forced_board
+		cell_index = 0
+	
+	emit_signal("cursor_changed", board_index, cell_index)
