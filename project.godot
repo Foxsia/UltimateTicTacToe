@@ -63,7 +63,7 @@ _global_script_class_icons={
 [application]
 
 config/name="TicTacToe"
-run/main_scene="res://scenes/game/game.tscn"
+run/main_scene="res://scenes/screens/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [display]
