@@ -1,10 +1,10 @@
-Ultimate Tic-Tac-Toe
+##Ultimate Tic-Tac-Toe
 
 A two-player Ultimate Tic-Tac-Toe game created for BlackBerry Boy, my custom handheld game console inspired by the original Game Boy.
 
 The project is built in Godot and is designed to be played on the BlackBerry Boy hardware as part of a collection of games developed specifically for the device.
 
-🎮 About the Game
+🎮 #About the Game
 
 Ultimate Tic-Tac-Toe is an extended version of the classic Tic-Tac-Toe.
 
@@ -14,7 +14,7 @@ Each move determines which board the opponent has to play on next, creating an a
 
 The current version supports two local players.
 
-✨ Features
+✨ #Features
 
 Ultimate Tic-Tac-Toe gameplay
 
@@ -28,14 +28,14 @@ Designed for the BlackBerry Boy handheld console
 
 Built with Godot
 
-🕹️ Controls
+🕹️ #Controls
 Action	Input
 Move	WASD
 Confirm	Enter
 
 The controls are designed with the BlackBerry Boy's physical controls in mind.
 
-🛠️ Technology
+🛠️ #Technology
 
 Engine: Godot
 
@@ -45,11 +45,11 @@ Platform: BlackBerry Boy
 
 Target: Custom handheld hardware
 
-Current Status
+#Current Status
 
 The game is currently in development.
 
-Planned
+#Planned
 
  Improved UI and visual polish
 
@@ -63,11 +63,11 @@ Planned
 
  Additional game modes
 
-🎨 Credits
+🎨 #Credits
 
 Game graphics were created by Kinney.
 
-🎯 About BlackBerry Boy
+🎯 #About BlackBerry Boy
 
 BlackBerry Boy is a custom handheld gaming console inspired by the Game Boy.
 
@@ -75,6 +75,6 @@ The goal of the project is to build both the hardware and software needed for a 
 
 Ultimate Tic-Tac-Toe is one of the games being developed for the platform.
 
-🔗 Related Project
+🔗 #Related Project
 
 More games and experiments will be added as the BlackBerry Boy project develops.
