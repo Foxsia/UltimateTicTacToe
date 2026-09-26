@@ -57,10 +57,6 @@ The game is currently in development.
 
  Additional animations
 
- Final controls adapted to BlackBerry Boy hardware
-
- Testing on the physical device
-
  Additional game modes
 
 ## 🎨Credits
