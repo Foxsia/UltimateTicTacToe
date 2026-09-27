@@ -5,7 +5,7 @@ const SIZE := 3
 var cells: Array = []
 
 signal board_played(cell)
-
+var finished := false
 
 func _ready():
 	columns = SIZE
@@ -18,7 +18,10 @@ func _ready():
 	set_cursor(0)
 
 func update_from_state(board_state: Array):
-	for i in range(SIZE*SIZE):
+	if finished:
+		return
+	
+	for i in range(SIZE * SIZE):
 		cells[i].set_player(board_state[i])
 
 func set_active(active: bool):
@@ -32,9 +35,7 @@ func set_cursor(cell_index: int):
 		cells[i].set_highlight(i == cell_index)
 
 func set_winner(player: int):
-	match player:
-		GameState.Player.RASPBERRY:
-			modulate = Color(1.0, 0.3, 0.5)
-
-		GameState.Player.BLUEBERRY:
-			modulate = Color(0.3, 0.5, 1.0)
+	finished = true
+	for cell in cells:
+		cell.set_player(player)
+		cell.set_highlight(false)
