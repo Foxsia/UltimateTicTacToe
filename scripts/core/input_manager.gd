@@ -6,7 +6,7 @@ signal move_down
 signal move_left
 signal move_right
 signal confirm
-signal menu
+signal pause
 
 func _unhandled_input(event):
 	if event.is_action_pressed("move_up"):
@@ -24,5 +24,5 @@ func _unhandled_input(event):
 	elif event.is_action_pressed("confirm"):
 		emit_signal("confirm")
 
-	elif event.is_action_pressed("menu"):
-		emit_signal("menu")
+	elif event.is_action_pressed("pause"):
+		emit_signal("pause")
