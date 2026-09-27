@@ -59,6 +59,9 @@ func play_move(board_index: int, cell_index: int) -> bool:
 	return true
 
 func get_next_board(cell_index: int) -> int:
+	if cell_index < 0 or cell_index >= state.board_status.size():
+		return -1
+	
 	if state.board_status[cell_index] != GameState.BoardStatus.PLAYING:
 		return -1
 	return cell_index

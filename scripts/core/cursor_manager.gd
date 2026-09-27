@@ -24,18 +24,26 @@ func move(direction: Vector2):
 			if board_index % 3 > 0:
 				board_index -= 1
 				x = 2
+			else:
+				x = 0
 		elif x > 2:
 			if board_index % 3 < 2:
 				board_index += 1
 				x = 0
+			else:
+				x = 2
 		if y < 0:
 			if board_index / 3 > 0:
 				board_index -= 3
 				y = 2
+			else:
+				y = 0
 		elif y > 2:
 			if board_index / 3 < 2:
 				board_index += 3
 				y = 0
+			else:
+				y = 2
 	else:
 		x = clamp(x, 0, 2)
 		y = clamp(y, 0, 2)
